@@ -1,0 +1,11 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+    background-color: rgb(12, 118, 110);
+}
+
+#map {
+    height: 1280px;
+}
