@@ -18,7 +18,7 @@ export default function RandomWord(props : any) {
   const [showA, setShowA] = useState(true);
 
   const fade = useSpring({
-    config: { tension: 150, mass: 1, friction: 10 },
+    config: { tension: 150, mass: 1, friction: 20 },
     from: { opacity: 1, y: 0 },
     to: {
       opacity: showA ? 1 : 0,

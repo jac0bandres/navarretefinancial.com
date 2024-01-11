@@ -1,17 +1,38 @@
+import { useContext } from 'react';
 import { Link } from 'react-router-dom'
 import SelectionText from "../../components/SelectionText/SelectionText";
 import RandomWord from '../../components/RandomWord/RandomWord';
+import { LanguageContext } from '../../components/LanguageContext/LanguageContext';
+import en from "./en.json"
+import es from "./es.json"
 
+const langs = {
+  "en" : en, "es" : es
+}
+
+function SelectLang(language) {
+  const esIcons = [
+    ["calculator", "Contabilidad"],
+    ["home", "Aseguranza"]
+  ]
+  const enIcons = [
+    ["calculator", "Accounting"],
+    ["home", "Insurance"]
+  ]
+  if (language == "es") { 
+    console.log("spanish")
+    return esIcons
+  } else { 
+    console.log("eng")
+    return enIcons 
+  }
+}
 
 export default function Home() {
-  const services = [
-    ["calculator", "Accounting"],
-    ["chart-pie", "Tax planning"],
-    ["home", "Insurance"],
-    ["file-alt", "Bookkeeping"],
-    ["laptop-code", "Websites"],
-    ["clipboard", "Advising"],
-  ];
+  const { language } = useContext(LanguageContext)
+  const lang = langs[language]
+  
+
   return (
     <>
       <div className="flex absolute w-screen justify-center -z-10 bg-black">
@@ -34,7 +55,7 @@ export default function Home() {
               </div>
             </div>
             <div className="flex justify-center items-center mt-24 lg:mt-0 w-full lg:w-1/2">
-              <RandomWord icons={services} fadeTime={400} delay={4000} />
+              <RandomWord icons={ SelectLang(language) } fadeTime={400} delay={4000} />
             </div>
           </div>
         </div>
@@ -42,17 +63,17 @@ export default function Home() {
           <div className="flex items-center justify-between h-1/4 flex-row bg-white rounded-full">
             <SelectionText>
               <Link className="text-white font-sans text-xl px-8" to="/about">
-                About
+                { lang.about }
               </Link>
             </SelectionText>
             <SelectionText>
               <Link className="text-white font-sans text-xl px-8" to="/services">
-                Services
+                { lang.services }
               </Link>
             </SelectionText>
             <SelectionText>
               <Link className="text-white font-sans text-xl px-8" to="/contact">
-                Contact
+                { lang.contact }
               </Link>
             </SelectionText>
           </div>

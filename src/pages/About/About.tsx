@@ -34,8 +34,8 @@ export default function About() {
           <div className="flex flex-col items-center justify-center w-1/2 bg-white py-8 mx-10 rounded-2xl">
             <SelectionText>
             <img
-              className="rounded-full border-teal-700 border-8 w-28 h-28"
-              src=""
+              className="rounded-full object-top object-cover border-teal-700 border-8 w-28 h-28"
+              src="andy-pfp.png"
             />
             </SelectionText>
             <h1>Andy Navarrete</h1>
@@ -52,8 +52,8 @@ export default function About() {
           <div className="flex flex-col items-center justify-center w-1/2 bg-white py-8 mx-10 rounded-2xl">
             <SelectionText>
             <img
-              className="rounded-full border-teal-700 border-8 w-28 h-28"
-              src=""
+              className="rounded-full object-fit border-teal-700 border-8 w-28 h-28"
+              src="jacob-pfp.jpg"
             />
             </SelectionText>
             <h1>Jacob Navarrete</h1>
