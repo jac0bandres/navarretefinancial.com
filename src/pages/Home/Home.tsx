@@ -20,10 +20,8 @@ function SelectLang(language) {
     ["home", "Insurance"]
   ]
   if (language == "es") { 
-    console.log("spanish")
     return esIcons
   } else { 
-    console.log("eng")
     return enIcons 
   }
 }

@@ -1,0 +1,22 @@
+{
+    "services": "Servicios",
+    "accounting" : "Contabiliad",
+    "qb" : "Asistencia de Quickbooks",
+    "bk" : "Teneduría de libros",
+    "rev" : "Reseñas",
+    "comp" : "Compilaciones",
+    "cfo" : "Servicios de director financiero",
+    "taxes" : "Impuestos",
+    "tp" : "Planificación fiscal",
+    "ir" : "Devoluciones individuales",
+    "cr" : "Devoluciones corporativas",
+    "teo" : "Organizaciones fiduciarias y exentas",
+    "inr": "Resoluciones de avisos del IRS",
+    "areas" : "Áreas de enfoque",
+    "re" : "Real Estate",
+    "dev" : "Software & IT Dev",
+    "man" : "Manufacturing",
+    "st" : "Start-ups",
+    "ic" : "International Companies",
+    "section2" : "Manejo de Servicios"
+}
