@@ -1,6 +1,6 @@
 import { useSpring, animated } from '@react-spring/web'
 
-export default function SelectionText({children}) {
+export default function SelectionText({children} : any) {
   const [spring, set] = useSpring(() => ({
     transform: `scale(1)`,
     from: {
@@ -13,7 +13,7 @@ export default function SelectionText({children}) {
     },
   }));
 
-  const updateHover = (hovering: boolean) => ({
+  const updateHover = (hovering : boolean) => ({
     transform: `scale(${hovering ? 1.2 : 1})`,
   });
   return (
