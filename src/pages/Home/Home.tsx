@@ -1,36 +1,18 @@
-import { useContext } from 'react';
-import { Link } from 'react-router-dom'
+import { Link } from "react-router-dom";
 import SelectionText from "../../components/SelectionText/SelectionText";
-import RandomWord from '../../components/RandomWord/RandomWord';
-import { LanguageContext } from '../../components/LanguageContext/LanguageContext';
-import en from "./en.json"
-import es from "./es.json"
+import RandomWord from "../../components/RandomWord/RandomWord";
 
-const langs = {
-  "en" : en, "es" : es
-}
-
-function SelectLang(language) {
-  const esIcons = [
-    ["calculator", "Contabilidad"],
-    ["home", "Aseguranza"]
-  ]
-  const enIcons = [
-    ["calculator", "Accounting"],
-    ["home", "Insurance"]
-  ]
-  if (language == "es") { 
-    return esIcons
-  } else { 
-    return enIcons 
-  }
-}
+const esIcons = [
+  ["calculator", "Contabilidad"],
+  ["home", "Aseguranza"],
+  ["address-book", "Bookkeeping"],
+  ["laptop-code", "Diseño de Web"],
+  ["user-circle", "Devoluciones Individuales"],
+  ["briefcase", "Devoluciones Corporativas"],
+  ["money-bill", "Planificación Fiscal"]
+];
 
 export default function Home() {
-  const { language } = useContext(LanguageContext)
-  const lang = langs[language]
-  
-
   return (
     <>
       <div className="flex absolute w-screen justify-center -z-10 bg-black">
@@ -53,25 +35,35 @@ export default function Home() {
               </div>
             </div>
             <div className="flex justify-center items-center mt-24 lg:mt-0 w-full lg:w-1/2">
-              <RandomWord icons={ SelectLang(language) } fadeTime={400} delay={4000} />
+              <RandomWord
+                icons={esIcons}
+                fadeTime={400}
+                delay={4000}
+              />
             </div>
           </div>
         </div>
-        <div className="flex justify-center h-1/3 w-full">
-          <div className="flex items-center justify-between h-1/4 flex-row bg-white rounded-full">
+        <div className="flex justify-center h-1/3 w-screen">
+          <div className="flex overflow-hidden items-center justify-center w-screen md:w-auto h-1/4 flex-row bg-white rounded-full">
             <SelectionText>
-              <Link className="text-white font-sans text-xl px-8" to="/about">
-                { lang.about }
+              <Link className="text-white font-sans text-xl px-8" to="/acerca">
+                Acerca
               </Link>
             </SelectionText>
             <SelectionText>
-              <Link className="text-white font-sans text-xl px-8" to="/services">
-                { lang.services }
+              <Link
+                className="text-white font-sans text-xl px-8"
+                to="/servicios"
+              >
+                Servicios
               </Link>
             </SelectionText>
             <SelectionText>
-              <Link className="text-white font-sans text-xl px-8" to="/contact">
-                { lang.contact }
+              <Link
+                className="text-white font-sans text-xl px-8"
+                to="/contacto"
+              >
+                Contacto
               </Link>
             </SelectionText>
           </div>

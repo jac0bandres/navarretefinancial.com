@@ -1,15 +1,6 @@
 import { useState, useEffect } from "react";
 import { useSpring, animated } from "@react-spring/web";
 
-const services = [
-  ["calculator", "Accounting"],
-  ["chart-pie", "Tax planning"],
-  ["home", "Insurance"],
-  ["file-alt", "Bookkeeping"],
-  ["laptop-code", "Websites"],
-  ["clipboard", "Advising"],
-];
-
 export default function RandomWord(props : any) {
   const [i, set] = useState(Math.floor(Math.random() * props.icons.length));
   let word = props.icons[i];
@@ -35,8 +26,7 @@ export default function RandomWord(props : any) {
       setTimeout(() => {
         setShowA(true);
       }, 400);
-      console.log(services.length);
-    }, 4000);
+    }, 1000);
     return () => clearInterval(interval);
   });
   return (

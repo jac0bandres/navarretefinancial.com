@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import { useSpring, animated, Spring } from "@react-spring/web";
+import { useSpring, animated } from "@react-spring/web";
 
 function MenuButton() {
   const [open, setOpen] = useState(false);
@@ -26,18 +26,18 @@ function MenuButton() {
             </div>
           </div>
           <div className="flex flex-row w-full justify-end mr-10 py-2 items-center text-2xl text-black font-mundial hover:text-teal-500">
-            <Link onClick={() => setOpen(false)} to="/about">
-              About
+            <Link onClick={() => setOpen(false)} to="/acerca">
+              Acerca
             </Link>
           </div>
           <div className="flex flex-row w-full justify-end mr-10 py-2 items-center text-2xl text-black font-mundial hover:text-teal-500">
-            <Link onClick={() => setOpen(false)} to="/services">
-              Services
+            <Link onClick={() => setOpen(false)} to="/servicios">
+              Servicios
             </Link>
           </div>
           <div className="flex flex-row w-full justify-end mr-10 py-2 items-center text-2xl pb-5 text-black font-mundial hover:text-teal-500">
-            <Link onClick={() => setOpen(false)} to="/contact">
-              Contact
+            <Link onClick={() => setOpen(false)} to="/contacto">
+              Contacto
             </Link>
           </div>
         </animated.div>
@@ -59,7 +59,7 @@ export default function Header() {
       <div className="flex fixed z-10 top-0 w-full bg-transparent items-center py-5 px-10">
         <div className="flex flex-row w-1/2">
           <Link className="w-full sm:w-14" to="/">
-            <img className="rounded-xl h-12 w-12" src="nf-green.png" />
+            <img className="rounded-xl" src="nf-green.png" />
           </Link>
           <h1 className="collapse md:visible text-2xl font-mundial text-white font-normal ml-5 mt-2">
             {" "}
@@ -69,13 +69,13 @@ export default function Header() {
         <div className="flex flex-row w-1/2 justify-end">
           <div className="flex flex-row collapse md:visible rounded-full px-1 justify-between text-xl font-sans text-white font-light items-center">
             <div className="collapse md:visible text-white hover:bg-white hover:text-teal-500 bg-teal-500 rounded-full px-3 py-2 mr-3">
-              <Link to="/about">About</Link>
+              <Link to="/acerca">Acerca</Link>
             </div>
             <div className="collapse md:visible hover:bg-white hover:text-green-700 rounded-full px-3 py-2">
-              <Link to="/services">Services</Link>
+              <Link to="/servicios">Servicios</Link>
             </div>
             <div className="collapse md:visible hover:bg-white hover:text-green-700 rounded-full px-3 py-2">
-              <Link to="/contact">Contact</Link>
+              <Link to="/contacto">Contacto</Link>
             </div>
           </div>
           <MenuButton />
