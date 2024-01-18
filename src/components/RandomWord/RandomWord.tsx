@@ -22,11 +22,11 @@ export default function RandomWord(props : any) {
       setShowA(false);
       setTimeout(() => {
         set(i < props.icons.length - 1 ? i + 1 : 0);
-      }, 400);
+      }, 500);
       setTimeout(() => {
         setShowA(true);
-      }, 400);
-    }, 1000);
+      }, 500);
+    }, 2000);
     return () => clearInterval(interval);
   });
   return (
